@@ -2,7 +2,7 @@
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
-      <pattern>こんにちは - %msg%n</pattern>
+      <pattern>ログだよ - %msg%n</pattern>
     </encoder>
   </appender>
 
@@ -17,8 +17,11 @@
     <from>from@example.com</from>
     <subject>LogbackのSMTPAppenderで送信</subject>
 
+    <!-- trueの場合、サンプルコード内でスリープ処理が必要  -->
+    <asynchronousSending>false</asynchronousSending>
+
     <layout class="ch.qos.logback.classic.PatternLayout">
-      <pattern>%m%n</pattern>
+      <pattern>ログをメールで通知するよ↓%n%n%m%n</pattern>
     </layout>
   </appender>
 
